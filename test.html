@@ -1,0 +1,56 @@
+<script>
+  
+  function letter_val(letter){
+  var alphabetOnes = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+  
+  var alphabetTens = ["j", "k", "l", "m", "n", "o", "p", "q", "r"]
+  
+  var alphabetHundreds=["s", "t", "u", "v", "w", "x", "y", "z"]
+
+  
+  for (var i = 0; i < alphabetOnes.length; i++){
+    if(letter == alphabetOnes[i]){return(i+1)}
+  }
+  for (var i = 0; i < alphabetTens.length; i++){
+    if(letter == alphabetTens[i]){return((i+1)*10)}
+  }
+  for (var i = 0; i < alphabetHundreds.length; i++){
+    if(letter == alphabetHundreds[i]){return((i+1)*100)}
+    }
+  return 0
+}
+
+
+
+function wordVal(word){
+  word = word.toLowerCase()
+var counter =0
+
+
+var wordray=word.split("")
+
+for(var i = 0; i < wordray.length; i++){
+  counter+=letter_val(wordray[i])
+}
+
+return(counter)}
+
+
+function process(){
+  var worker =  document.forms["form1"]["fname"].value
+  var num = wordVal(worker)
+  document.getElementById("word_val").innerHTML = num
+}
+  
+  
+</script>
+
+
+<form name="form1"> 
+Word: <input type="text" name="fname">
+<br><br>
+<input type="button" onclick="process()" value="Submit">
+</form>
+
+
+<div id="word_val"></div>
