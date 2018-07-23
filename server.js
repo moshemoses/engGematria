@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
 //process.env.PORT
-app.listen(process.env.PORT, function() {
+app.listen(5000, function() {
 console.log('listening on 5000')
 })
 
@@ -66,13 +66,14 @@ for(var i = 0; i < wordray.length; i++){
 return(counter)}
 
 subWord = req.body.myWord
+let TBSaved = subWord
 console.log(subWord)
 console.log(typeof(subWord))
 var num
 if(isNaN(subWord)=== false ){num = parseInt(subWord); subWord = ""}
 else{num = parseInt(wordVal(req.body.myWord))}
 
-
+let insertings = String(new Date().toISOString())
 
 
 
@@ -84,6 +85,30 @@ let db = new sqlite3.Database('test.db', sqlite3.OPEN_READWRITE, (err)=>{
 	}
 	console.log('conectd to the in-memory sqlite database.');
 });
+
+
+
+
+
+let sql1 = 'INSERT INTO queries(date, input) VALUES(?, ?)';
+ 
+// output the INSERT statement
+console.log(sql1);
+ 
+db.run(sql1, [insertings, TBSaved], function(err) {
+  if (err) {
+    return console.error(err.message);
+  }
+  console.log(`Rows inserted ${this.changes}`);
+});
+
+
+
+
+
+
+
+
 
 
 
