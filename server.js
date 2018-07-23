@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
 //process.env.PORT
-app.listen(process.env.PORT, function() {
+app.listen(5000, function() {
 console.log('listening on 5000')
 })
 
@@ -66,7 +66,15 @@ for(var i = 0; i < wordray.length; i++){
 return(counter)}
 
 subWord = req.body.myWord
-var num = parseInt(wordVal(req.body.myWord))
+console.log(subWord)
+console.log(typeof(subWord))
+var num
+if(isNaN(subWord)=== false ){num = parseInt(subWord); subWord = ""}
+else{num = parseInt(wordVal(req.body.myWord))}
+
+
+
+
 
 const sqlite3 = require('sqlite3').verbose();
 
