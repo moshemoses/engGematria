@@ -10,8 +10,8 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
-app.listen(3000, function() {
-console.log('listening on 3000')
+app.listen(5000, function() {
+console.log('listening on 5000')
 })
 
 app.get('/', (req, res) => {
