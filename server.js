@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
-app.listen(5000, function() {
+app.listen(process.env.PORT, function() {
 console.log('listening on 5000')
 })
 
