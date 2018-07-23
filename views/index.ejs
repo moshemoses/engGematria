@@ -1,23 +1,29 @@
 <title>MY APP</title>
+<head>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
 </head>
 <body>
 
 
 <h1>The words below are numerological equivalent of:   <%= subWord %> --- <%= num %> </h1>
-<ul class="valueBox">
+<div class="flex-container">
 <% for(var i=0; i<wordBox.length; i++) {%>
-<li class="valueBox">
-<span><%= wordBox[i] %> </span>
+<div>
+<%= wordBox[i] %> 
 
-</li>
+</div>
 <% } %>
-</ul>
+</div>
 
 
 <form action="/subWord" method="POST">
 <input type="text" placeholder="Please insert word here" name="myWord">
 <button type="submit">Submit</button>
 </form>
+
+
 
 
 
