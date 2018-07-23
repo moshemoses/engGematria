@@ -10,7 +10,9 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
-app.listen(process.env.PORT, function() {
+app.use(express.static(__dirname + '/public'));
+//process.env.PORT
+app.listen(5000, function() {
 console.log('listening on 5000')
 })
 
@@ -108,15 +110,10 @@ db.close((err) => {
   //perhaps shouldn't be here
   res.render('index.ejs', {wordBox, subWord, num})
 
-  
-
-});
-
-
-
- 
-
-
-
+  });
 
 })
+
+
+
+
