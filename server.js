@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/public'));
 //process.env.PORT
-app.listen(process.env.PORT, function() {
+app.listen(5000, function() {
 console.log('listening on 5000')
 })
 

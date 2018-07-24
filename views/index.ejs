@@ -16,6 +16,22 @@
 
 <body>
 
+
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <form class="form-inline" action="/subWord" method="POST">
+    <input class="form-control mr-sm-2" type="text" name="myWord" placeholder="Please insert word or number here">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</nav>
+
+
+
+
+
+
+
 <div class="jumbotron text-center">
 
 <h1>The words below are numerological equivalent of:   <%= subWord %> --- <%= num %> </h1>
@@ -25,7 +41,7 @@
 <div class="container-fluid">
 <div class="row">
 <% for(var i=0; i<wordBox.length; i++) {%>
-<div class = "col-sm-3">
+<div class = "col-sm-2">
 <%= wordBox[i] %> 
 
 </div>
@@ -34,10 +50,6 @@
 </div>
 
 
-<form action="/subWord" method="POST">
-<input type="text" placeholder="Please insert word here" name="myWord">
-<button type="submit">Submit</button>
-</form>
 
 
 

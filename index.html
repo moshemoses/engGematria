@@ -16,12 +16,14 @@
 <body>
 	<div class="jumbotron text-center">
 
-By submitting a word you will returned it's gematria or numerological value along with a list of words with similar values. You can also submit a numerical value which will return all words with that value.
+By submitting a word you will retrieve it's gematria or numerological value along with a list of words of that same numerical value. You can also submit a numerical value which will return all words with that same value.
 </div>
-<form action="/subWord" method="POST">
-<input type="text" placeholder="Please insert a word or number here" name="myWord">
-<button type="submit">Submit</button>
-</form>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <form class="form-inline" action="/subWord" method="POST">
+    <input class="form-control mr-sm-2" type="text" name="myWord" placeholder="Please insert word or number here">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</nav>
 
 
 </body>
