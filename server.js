@@ -18,6 +18,11 @@ console.log('listening on 5000')
 
 app.get('/', (req, res) => {
 res.sendFile(__dirname + '/index.html')
+})
+
+
+app.get('/subWord', (req, res) => {
+res.sendFile(__dirname + '/index.html')
 
 // Note: __dirname is directory that contains the JavaScript source code. Try logging it and see what you get!
 // Mine was '/Users/zellwk/Projects/demo-repos/crud-express-mongo' for this app.
