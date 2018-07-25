@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 //process.env.PORT
 app.listen(process.env.PORT, function() {
-console.log('listening on 5000')
+console.log('listening on some port or another')
 })
 
 app.get('/', (req, res) => {
